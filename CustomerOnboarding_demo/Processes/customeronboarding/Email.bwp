@@ -40,6 +40,11 @@
                 <variable>Mapper</variable>
             </endingVariables>
         </task>
+        <task name="Log1">
+            <endingVariables>
+                <variable>Log1-input</variable>
+            </endingVariables>
+        </task>
     </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
@@ -672,8 +677,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="194"
-                                    xsi:type="notation:Bounds" y="107"/>
+                                    x="226"
+                                    xsi:type="notation:Bounds" y="108"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -779,8 +784,43 @@
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="116"
-                                    xsi:type="notation:Bounds" y="229"/>
+                                    x="49"
+                                    xsi:type="notation:Bounds" y="237"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint x="-68"
+                                    xsi:type="notation:Bounds" y="244"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -882,6 +922,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[11, 25, -49, -104]$[49, 105, -11, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -932,6 +983,7 @@
                 <bpws:literal>customeronboarding.JDBCConnectionResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
+        <bpws:variable element="ns3:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -949,6 +1001,7 @@
                 <bpws:link name="MapperToSendMail" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SendMailToLog" tibex:linkType="SUCCESS"/>
                 <bpws:link name="MapperToJDBCUpdate" tibex:linkType="SUCCESS"/>
+                <bpws:link name="JDBCUpdateToLog1" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1090,6 +1143,9 @@
                     <bpws:targets>
                         <bpws:target linkName="MapperToJDBCUpdate"/>
                     </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="JDBCUpdateToLog1"/>
+                    </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
                             expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1f1437ab-4db0-44e0-815d-6bc8e16ac880+input&quot; xmlns:tns1=&quot;/T1669656744078Converted/JsonSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns3:jdbcUpdateActivityInput>&lt;FirstName>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Mapper/tns1:FirstName)&quot;>&lt;xsl:value-of select=&quot;$Mapper/tns1:FirstName&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FirstName>&lt;LastName>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Mapper/tns1:LastName)&quot;>&lt;xsl:value-of select=&quot;$Mapper/tns1:LastName&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/LastName>&lt;Contact>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Mapper/tns1:Contact)&quot;>&lt;xsl:value-of select=&quot;$Mapper/tns1:Contact&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Contact>&lt;Email>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Mapper/tns1:Email)&quot;>&lt;xsl:value-of select=&quot;$Mapper/tns1:Email&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Email>&lt;/tns3:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
@@ -1120,6 +1176,35 @@
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="Email"/>
                                     </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="Log1-input"
+                    name="Log1"
+                    tibex:xpdlId="67f4c992-7d0c-4df5-b060-de19f5a5cdf8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="JDBCUpdateToLog1"/>
+                    </bpws:targets>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Customer created in Database&amp;quot;&quot;/>&lt;/message>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.log"
+                            version="6.0.0.001"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>
