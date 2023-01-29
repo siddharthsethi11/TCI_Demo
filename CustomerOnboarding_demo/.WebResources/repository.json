@@ -1,0 +1,16 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [{
+            "localTimestamp": 1669656743952,
+            "localURI": "/CustomerOnboarding_demo/Service Descriptors/CustomerOnboarding_1.0.1.json",
+            "disabled": false,
+            "remoteTimestamp": 0,
+            "localHash": "e2ae43f2b83f6db55afb7dc577a9c201591fbf57",
+            "remoteId": "8",
+            "remoteHash": "e2ae43f2b83f6db55afb7dc577a9c201591fbf57"
+        }],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": []
+}

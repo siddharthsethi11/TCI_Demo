@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/CustomerOnboarding/Tests/CustomerOnboarding1.bwt">
+  <ProcessNode Id="customeronboarding.Email" Name="customeronboarding.Email" ModelType="BW" moduleName="CustomerOnboarding">
+    <Assertion Id="9d0a810d-eb33-4562-9c6d-770fdbb70b60" Name="Mapper" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;/T1669656744078Converted/JsonSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$Mapper/tns1:FirstName='John'&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;/T1669656744078Converted/JsonSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:template name=&quot;Mapper&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;string>&lt;testInput>&lt;xsl:value-of select=&quot;$Mapper/tns1:FirstName&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;&amp;quot;John&amp;quot;&quot;/>&lt;/goldInput>&lt;/string>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="customeronboarding.Email">
+      <Inputs Id="b095ba72-bf1c-43a6-bf53-daf3e1f25aefCustomerOnboarding_customeronboarding.Email_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS" inputFile="">
+        <informations Name="input" nameSpace="/T1669656744078Converted/JsonSchema">
+          <nameSpaces prefix="tns" nameSapce="/T1669656744078Converted/JsonSchema"/>
+          <Parameter Name="tns:CustomerRequestSchema">
+            <parameters Name="tns:FirstName" Value="John" type="string" nameSpace="/T1669656744078Converted/JsonSchema" canDelete="true">
+              <parent Name="CustomerRequestSchema" nameSpace="/T1669656744078Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:LastName" Value="Doe" type="string" nameSpace="/T1669656744078Converted/JsonSchema" canDelete="true">
+              <parent Name="CustomerRequestSchema" nameSpace="/T1669656744078Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:Email" Value="sethisiddharth504@gmail.com" type="string" nameSpace="/T1669656744078Converted/JsonSchema" canDelete="true">
+              <parent Name="CustomerRequestSchema" nameSpace="/T1669656744078Converted/JsonSchema"/>
+            </parameters>
+            <parameters Name="tns:Contact" Value="9811713817" type="string" nameSpace="/T1669656744078Converted/JsonSchema" canDelete="true">
+              <parent Name="CustomerRequestSchema" nameSpace="/T1669656744078Converted/JsonSchema"/>
+            </parameters>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:CustomerRequestSchema xmlns:tns='/T1669656744078Converted/JsonSchema' >&lt;tns:FirstName>John&lt;/tns:FirstName>&lt;tns:LastName>Doe&lt;/tns:LastName>&lt;tns:Email>sethisiddharth504@gmail.com&lt;/tns:Email>&lt;tns:Contact>9811713817&lt;/tns:Contact>&lt;/tns:CustomerRequestSchema>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_mLl40G9CEe2_utWEr7FFNQ" targetNamespace="http://tns.tibco.com/bw/composite/CustomerOnboarding_demo" name="CustomerOnboarding_demo" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_nt_fsm9CEe2_utWEr7FFNQ" name="customer" promote="ComponentProcess/customer">
+    <sca:interface.wsdl xmi:id="_nt_ftm9CEe2_utWEr7FFNQ" interface="http://xmlns.example.com/20221128230214PLT#wsdl.interface(customer)" scaext:wsdlLocation="../Processes/customeronboarding/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_nt_ft29CEe2_utWEr7FFNQ" name="RestService" path="/customer" docBasePath="http://localhost:7777/CustomerOnboarding_demo" docResourcePath="Customer" basePath="/" connector="customeronboarding.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/CustomerOnboarding_1.0.1.json">
+      <operation xmi:id="_nuIpoG9CEe2_utWEr7FFNQ" operationName="post" nickname="postCustomer" httpMethod="POST" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_nucLoG9CEe2_utWEr7FFNQ"/>
+      <advancedConfig xmi:id="_nt_fuG9CEe2_utWEr7FFNQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_nuIpoW9CEe2_utWEr7FFNQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_mXm7kG9CEe2_utWEr7FFNQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mXwFgG9CEe2_utWEr7FFNQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mXwFgW9CEe2_utWEr7FFNQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mXwFgm9CEe2_utWEr7FFNQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mXwFg29CEe2_utWEr7FFNQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mXwFhG9CEe2_utWEr7FFNQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mpId4HR7Ee2nXI6uEhcgQw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mpWgUHR7Ee2nXI6uEhcgQw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mpbY0HR7Ee2nXI6uEhcgQw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KKVqwHS3Ee2gfMcQIOt9sQ" name="Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_mSytAG9CEe2_utWEr7FFNQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mSytAW9CEe2_utWEr7FFNQ" processName="customeronboarding.Process"/>
+    <sca:service xmi:id="_nt_fsG9CEe2_utWEr7FFNQ" name="customer">
+      <sca:interface.wsdl xmi:id="_nt_fsW9CEe2_utWEr7FFNQ" interface="http://xmlns.example.com/20221128230214PLT#wsdl.interface(customer)" scaext:wsdlLocation="../Processes/customeronboarding/Process.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

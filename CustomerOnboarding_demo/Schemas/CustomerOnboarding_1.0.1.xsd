@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1669656744078Converted/JsonSchema" xmlns:tns="/T1669656744078Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="CustomerResponseSchema_Status" type="tns:CustomerResponseSchema_Status"/>
+    <xs:simpleType name="CustomerResponseSchema_Status">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="CustomerResponseSchema_CustomerID" type="tns:CustomerResponseSchema_CustomerID"/>
+    <xs:simpleType name="CustomerResponseSchema_CustomerID">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="CustomerRequestSchema_Email" type="tns:CustomerRequestSchema_Email"/>
+    <xs:simpleType name="CustomerRequestSchema_Email">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="CustomerRequestSchema_FirstName" type="tns:CustomerRequestSchema_FirstName"/>
+    <xs:simpleType name="CustomerRequestSchema_FirstName">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="CustomerRequestSchema" type="tns:CustomerRequestSchema"/>
+    <xs:complexType name="CustomerRequestSchema">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="FirstName" type="xs:string"/>
+            <xs:element minOccurs="0" name="LastName" type="xs:string"/>
+            <xs:element minOccurs="0" name="Email" type="xs:string"/>
+            <xs:element minOccurs="0" name="Contact" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CustomerResponseSchema" type="tns:CustomerResponseSchema"/>
+    <xs:complexType name="CustomerResponseSchema">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CustomerID" type="xs:string"/>
+            <xs:element minOccurs="0" name="Status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CustomerRequestSchema_LastName" type="tns:CustomerRequestSchema_LastName"/>
+    <xs:simpleType name="CustomerRequestSchema_LastName">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="CustomerRequestSchema_Contact" type="tns:CustomerRequestSchema_Contact"/>
+    <xs:simpleType name="CustomerRequestSchema_Contact">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+</xs:schema>
